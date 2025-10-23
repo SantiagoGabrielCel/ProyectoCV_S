@@ -26,6 +26,177 @@ body {
     min-height: 100vh;
 }
 
+.welcome-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.3), transparent 55%),
+        rgba(0, 36, 42, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.welcome-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: overlayFadeIn 0.7s ease forwards;
+}
+
+.welcome-overlay.is-hiding {
+    pointer-events: none;
+    animation: overlayFadeOut 0.6s ease forwards;
+}
+
+.no-js .welcome-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: none;
+}
+
+.no-js .welcome-card {
+    animation: none;
+}
+
+body.has-welcome-open {
+    overflow: hidden;
+}
+
+.welcome-card {
+    position: relative;
+    max-width: 420px;
+    width: min(90%, 420px);
+    padding: 2.8rem 2.4rem 2.2rem;
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.82));
+    box-shadow: 0 26px 58px rgba(0, 28, 34, 0.45);
+    text-align: center;
+    overflow: hidden;
+    color: var(--color-text);
+}
+
+.welcome-overlay.is-visible .welcome-card {
+    animation: cardPop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.welcome-card h2 {
+    margin: 0 0 0.7rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: var(--color-background);
+}
+
+.welcome-card p {
+    margin: 0 0 1.6rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+
+.welcome-button {
+    padding: 0.75rem 2.3rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 16px 28px rgba(0, 140, 158, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.welcome-button:hover,
+.welcome-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 36px rgba(0, 140, 158, 0.4);
+}
+
+.welcome-flowers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    width: clamp(42px, 7vw, 62px);
+    height: clamp(42px, 7vw, 62px);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 192, 203, 0.95) 40%, rgba(255, 115, 160, 0.9) 100%);
+    border-radius: 50%;
+    filter: drop-shadow(0 12px 22px rgba(255, 110, 160, 0.35));
+    opacity: 0;
+    animation: petalDance 6s ease-in-out infinite;
+}
+
+.flower::after,
+.flower::before {
+    content: '';
+    position: absolute;
+    inset: 20%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.85), rgba(255, 165, 190, 0.7));
+    transform: rotate(45deg);
+}
+
+.flower::before {
+    inset: 28%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 233, 240, 0.6) 75%);
+}
+
+.flower--1 { top: -14%; left: 12%; animation-delay: 0.2s; }
+.flower--2 { top: 6%; right: -10%; animation-delay: 0.6s; }
+.flower--3 { bottom: -16%; left: 18%; animation-delay: 1s; }
+.flower--4 { bottom: -10%; right: 16%; animation-delay: 1.4s; }
+.flower--5 { top: 45%; left: -12%; animation-delay: 1.8s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .welcome-overlay,
+    .welcome-overlay.is-visible,
+    .welcome-overlay.is-hiding,
+    .welcome-overlay.is-visible .welcome-card,
+    .flower {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        animation-name: none !important;
+    }
+
+    .flower {
+        opacity: 1;
+    }
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes overlayFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes cardPop {
+    0% { transform: scale(0.8) translateY(30px); opacity: 0; }
+    55% { transform: scale(1.05) translateY(-6px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes petalDance {
+    0% { transform: translate3d(0, 30px, 0) scale(0.7) rotate(0deg); opacity: 0; }
+    15% { opacity: 1; }
+    50% { transform: translate3d(0, -10px, 0) scale(1) rotate(12deg); opacity: 0.9; }
+    80% { transform: translate3d(0, 16px, 0) scale(0.9) rotate(-10deg); opacity: 0.8; }
+    100% { transform: translate3d(0, 38px, 0) scale(0.8) rotate(8deg); opacity: 0; }
+}
+
 a {
     color: var(--color-accent);
     text-decoration: none;
@@ -72,7 +243,7 @@ a:focus {
 
 h1 {
     margin: 0;
-    font-size: clamp(2.4rem, 4vw, 3.3rem);
+font-size: clamp(2.4rem, 4vw, 3.3rem);
     letter-spacing: 0.06em;
 }
 

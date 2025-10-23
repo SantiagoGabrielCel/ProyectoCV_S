@@ -9,7 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="no-js">
+    <div class="welcome-overlay" id="welcomeOverlay" role="dialog" aria-live="polite" aria-modal="true" aria-hidden="false">
+        <div class="welcome-card" role="document">
+            <div class="welcome-flowers" aria-hidden="true">
+                <span class="flower flower--1"></span>
+                <span class="flower flower--2"></span>
+                <span class="flower flower--3"></span>
+                <span class="flower flower--4"></span>
+                <span class="flower flower--5"></span>
+            </div>
+            <h2>¡Gracias por visitar mi CV virtual!</h2>
+            <p>Te invito a recorrer mi trayectoria profesional.</p>
+            <button class="welcome-button" type="button" id="welcomeDismiss">Comenzar</button>
+        </div>
+    </div>
     <header class="hero">
         <div class="hero__content">
             <p class="hero__location">Ciudad de Buenos Aires · <a href="mailto:silvina_adriana@yahoo.com">silvina_adriana@yahoo.com</a></p>
@@ -40,19 +54,19 @@
                     <span class="experience-period">Analista Técnica Funcional | septiembre 1998 – diciembre 2024</span>
                 </header>
                 <ul>
-					<li>Procesamiento de Archivos e Interfaces: Realicé el análisis de requerimientos de procesamiento de archivos e interfaces enviadas por el BCRA, asegurando el cumplimiento normativo y la correcta integración de datos.</li>
-					<li>Análisis de Requerimientos: Realicé el análisis funcional de requerimientos para módulos bancarios, incluyendo cuentas corrientes, cajas de ahorro y plazos fijos, alineando las soluciones con las necesidades del negocio.</li>
-					<li>Identificación y Documentación: Colaboré con partes interesadas para identificar, documentar y validar requerimientos funcionales, asegurando una comprensión clara de las expectativas.</li>
-					<li>Estimación de Tiempos y Recursos: Estimé el tiempo y esfuerzo para el desarrollo de funcionalidades, priorizando tareas según su impacto y urgencia.</li>
-					<li>Metodologías Ágiles: Trabaje con metodologías ágiles (Scrum).</li>
-					<li>Documentación Funcional: Elaboré y mantuve documentación funcional detallada, incluyendo especificaciones de requerimientos, casos de uso y criterios de aceptación.</li>
-					<li>Pruebas Funcionales: Realicé pruebas funcionales, incluyendo la creación de casos de prueba y la ejecución de pruebas de aceptación del usuario, asegurando la calidad del software.</li>
-					<li>Mejora Continua: Participé en revisiones post implementación para evaluar el rendimiento de las soluciones y recopilar retroalimentación.</li>
-					<li>Experiencia en QA y Testing Manual: Amplia trayectoria en la planificación, diseño y ejecución de pruebas funcionales y de regresión, garantizando la calidad de los entregables en entornos bancarios críticos.</li>
-					<li>Gestión de Ciclo de Pruebas: Participación activa en todo el ciclo de pruebas de software (diseño de casos, ejecución, reporte de defectos y seguimiento), aplicando metodologías ágiles y herramientas de gestión para asegurar la trazabilidad y cumplimiento de los requerimientos.</li>
-					<li>Desarrollo y mejora continua: Realice tareas tanto de mantenimiento evolutivo y desarrollo de los diferentes módulos COBIS: Plazo Fijo, Tesorería, Terminal Administrativa (caja de ahorro y cuenta corriente) y Caja de seguridad. Estos mismos empleando lenguaje Visual Basic .NET y SQL en la parte de datos.</li>
-					<li>Desarrollo y mantenimiento Procesos Almacenados: Realice mantenimiento evolutivo y desarrollo de los diferentes Stored Procedures bancarios.</li>
-					<li>Consumo de microservicios desarrollados en .NET</li>
+                                        <li>Procesamiento de Archivos e Interfaces: Realicé el análisis de requerimientos de procesamiento de archivos e interfaces enviadas por el BCRA, asegurando el cumplimiento normativo y la correcta integración de datos.</li>
+                                        <li>Análisis de Requerimientos: Realicé el análisis funcional de requerimientos para módulos bancarios, incluyendo cuentas corrientes, cajas de ahorro y plazos fijos, alineando las soluciones con las necesidades del negocio.</li>
+                                        <li>Identificación y Documentación: Colaboré con partes interesadas para identificar, documentar y validar requerimientos funcionales, asegurando una comprensión clara de las expectativas.</li>
+                                        <li>Estimación de Tiempos y Recursos: Estimé el tiempo y esfuerzo para el desarrollo de funcionalidades, priorizando tareas según su impacto y urgencia.</li>
+                                        <li>Metodologías Ágiles: Trabaje con metodologías ágiles (Scrum).</li>
+                                        <li>Documentación Funcional: Elaboré y mantuve documentación funcional detallada, incluyendo especificaciones de requerimientos, casos de uso y criterios de aceptación.</li>
+                                        <li>Pruebas Funcionales: Realicé pruebas funcionales, incluyendo la creación de casos de prueba y la ejecución de pruebas de aceptación del usuario, asegurando la calidad del software.</li>
+                                        <li>Mejora Continua: Participé en revisiones post implementación para evaluar el rendimiento de las soluciones y recopilar retroalimentación.</li>
+                                        <li>Experiencia en QA y Testing Manual: Amplia trayectoria en la planificación, diseño y ejecución de pruebas funcionales y de regresión, garantizando la calidad de los entregables en entornos bancarios críticos.</li>
+                                        <li>Gestión de Ciclo de Pruebas: Participación activa en todo el ciclo de pruebas de software (diseño de casos, ejecución, reporte de defectos y seguimiento), aplicando metodologías ágiles y herramientas de gestión para asegurar la trazabilidad y cumplimiento de los requerimientos.</li>
+                                        <li>Desarrollo y mejora continua: Realice tareas tanto de mantenimiento evolutivo y desarrollo de los diferentes módulos COBIS: Plazo Fijo, Tesorería, Terminal Administrativa (caja de ahorro y cuenta corriente) y Caja de seguridad. Estos mismos empleando lenguaje Visual Basic .NET y SQL en la parte de datos.</li>
+                                        <li>Desarrollo y mantenimiento Procesos Almacenados: Realice mantenimiento evolutivo y desarrollo de los diferentes Stored Procedures bancarios.</li>
+                                        <li>Consumo de microservicios desarrollados en .NET</li>
                 </ul>
             </article>
             <article class="experience-item">
@@ -144,5 +158,91 @@
             <path d="M20.45 20.45h-3.55v-5.39c0-1.28-.02-2.93-1.79-2.93-1.79 0-2.07 1.4-2.07 2.84v5.48H9.49V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.29 2.38 4.29 5.47v6.27zM5.34 7.43a2.06 2.06 0 112.06-2.06 2.07 2.07 0 01-2.06 2.06zM7.11 20.45H3.57V9h3.54zM22.23 0H1.77A1.77 1.77 0 000 1.77v20.46A1.77 1.77 0 001.77 24h20.46A1.77 1.77 0 0024 22.23V1.77A1.77 1.77 0 0022.23 0z"/>
         </svg>
     </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('welcomeOverlay');
+            const dismissButton = document.getElementById('welcomeDismiss');
+
+            document.body.classList.remove('no-js');
+
+            if (!overlay || !dismissButton) {
+                return;
+            }
+
+            overlay.setAttribute('aria-hidden', 'true');
+
+            const previouslyFocused = document.activeElement;
+            const focusableElements = Array.from(
+                overlay.querySelectorAll(
+                    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                )
+            );
+
+            const focusElement = (element) => {
+                if (!(element instanceof HTMLElement)) {
+                    return;
+                }
+                try {
+                    element.focus({ preventScroll: true });
+                } catch (error) {
+                    element.focus();
+                }
+            };
+
+            const showOverlay = () => {
+                overlay.classList.add('is-visible');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('has-welcome-open');
+                focusElement(dismissButton);
+            };
+
+            const hideOverlay = () => {
+                if (!overlay.classList.contains('is-visible') || overlay.classList.contains('is-hiding')) {
+                    return;
+                }
+                overlay.classList.add('is-hiding');
+                overlay.addEventListener('animationend', () => {
+                    overlay.classList.remove('is-visible', 'is-hiding');
+                    overlay.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('has-welcome-open');
+                    focusElement(previouslyFocused);
+                }, { once: true });
+            };
+
+            setTimeout(showOverlay, 250);
+            dismissButton.addEventListener('click', hideOverlay);
+            overlay.addEventListener('click', (event) => {
+                if (event.target === overlay) {
+                    hideOverlay();
+                }
+            });
+            document.addEventListener('keydown', (event) => {
+                if (!overlay.classList.contains('is-visible')) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    hideOverlay();
+                    return;
+                }
+
+                if (event.key === 'Tab' && focusableElements.length > 0) {
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+
+                    if (event.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            event.preventDefault();
+                            focusElement(lastElement);
+                        }
+                    } else if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        focusElement(firstElement);
+                    }
+                }
+            });
+            setTimeout(hideOverlay, 8000);
+        });
+    </script>
 </body>
 </html>
